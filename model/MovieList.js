@@ -1,8 +1,11 @@
 function MovieList(movie)
 {
 	var movieList;
+}
 
-	this.add = function(movie)
+MovieList.prototype = 
+{
+	add:  function(movie)
 	{
 		if(movieList == undefined){
 			movieList = [movie];
@@ -12,7 +15,7 @@ function MovieList(movie)
 		movieList.push(movie);
 	}
 
-	this.sortByTitle = function()
+	sortByTitle:  function()
 	{
 		if(movieLsit == undefined)
 			return;

@@ -1,45 +1,69 @@
 function  Movie()
 {
 	var id;
-	var shortCode;
-	var title;
+	var name;
+	var description;
+	var genre;
+	var listOfActors;
 	var rating;
-	var ratingDescription;
-	var synopsis;
-	var shorSynopsis;
-	var HOFilmCode;
-	var CorporateFilmId;
-	var runTime;
-	var openingDate;
-	var graphicUrl;
-	var filmNameUrl;
-	var trailerUrl;
-	var additionalUrls; // Array
-	var isComingSoon;
-	var isScheduledAtCinema;
-	var titleAlt;
-	var ratingAlt;
-	var ratingDescriptionAlt;
-	var synopsisAlt;
-	var shortSynopsisAlt;
-	var websiteUrl;
-	var genreId;
-	var eDICode;
-	var twitterTag;
-	var titleTranslations; // Array
-	var synopsisTranslations; // Array
-	var shortSynopsisTranslations; // Array
-	var ratingDescriptionTranslations; // Array
-	var customerRatingStatistics; //Object
-	var customerRatingTrailerStatistics; //Object
-	var filmWebId;
+}
 
-	this.getTitle = function()
+Movie.prototype = 
+{
+	
+	setId : function(idValue){
+		id = idValue;
+	},
+
+	getId : function(){
+		return id;
+	},
+
+	setName : function(nameValue){
+		name = nameValue;
+	},
+
+	getName : function(){
+		return name;
+	},
+
+	setDescription : function(descriptionValue){
+		description = descriptionValue;
+	},
+
+	getDescription : function()
 	{
-		return title;
-	}
-	this.getInfo = function()
+		return description;
+	},
+
+	setGenre : function(genreValue){
+		genre = genreValue;
+	},
+
+	getGenre : function(){
+		return genre;
+	},
+
+	setListOfActors : function(list){
+		listOfActors = list;
+	},
+
+	getListOfActors : function(){
+		var str = "";
+		for(var i = 0; i < listOfActors.length; i++){
+			str+= "<a href="'#'">"listOfActors[i].getName() + listOfActors[i].getSurName()+"</a>";
+		}
+	},
+
+	setRating : function(ratingValue)
 	{
-		console.log(customerRatingStatistics == undefined?"Yes":"No");
+		rating = ratingValue; 
+	},
+
+	getRating : function()
+	{
+		return rating;
 	}
+
+
 }
