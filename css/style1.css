@@ -9,7 +9,7 @@ body
 }
 #myInput
 {
-	width: 100%;
+	max-width: 100%;
 	height: 30px;
 	font-size: 14px;
 	display:block;
@@ -20,8 +20,8 @@ body
 }
 .test img
 {
-	height: 300px;
-	width:200px;
+	height: auto;
+	max-width:100%;
 }
 .row.film-showing
 {
@@ -47,7 +47,7 @@ span
 header
 {
 	background-image: url("../images/gradient-fon-grafika-fioletovyi-geometriia-abstraktsiia.jpg");
-	height: 80px;
+	height: auto;
 }
 #main-logo
 {
@@ -63,6 +63,7 @@ header
 .main-links
 {
 	padding:20px;
+	max-width:100%;
 }
 
 .main-links a 
@@ -89,8 +90,11 @@ a:visited
 }
 footer
 {
-	width:100%;
-	height: 80px;
+	position: absolute;
+  	bottom: 0;
+  	left: 0;
+  	width: 100%;
+  	height: 100px;
 	background-image:url("../images/gradient-fon-grafika-fioletovyi-geometriia-abstraktsiia.jpg");
 }
 
