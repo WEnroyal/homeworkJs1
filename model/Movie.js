@@ -1,69 +1,71 @@
-function  Movie()
+function  Movie(id,name,description,genre,listOfActors,rating)
 {
-	var id;
-	var name;
-	var description;
-	var genre;
-	var listOfActors;
-	var rating;
+	this.id = id;
+	this.name = name;
+	this.description = description;
+	this.genre = genre;
+	this.listOfActors = listOfActors;
+	this.rating = rating;
 }
 
 Movie.prototype = 
 {
 	
 	setId : function(idValue){
-		id = idValue;
+		this.id = idValue;
 	},
 
 	getId : function(){
-		return id;
+		return this.id;
 	},
 
 	setName : function(nameValue){
-		name = nameValue;
+		this.name = nameValue;
 	},
 
 	getName : function(){
-		return name;
+		return this.name;
 	},
 
 	setDescription : function(descriptionValue){
-		description = descriptionValue;
+		this.description = descriptionValue;
 	},
 
 	getDescription : function()
 	{
-		return description;
+		return this.description;
 	},
 
 	setGenre : function(genreValue){
-		genre = genreValue;
+		this.genre = genreValue;
 	},
 
 	getGenre : function(){
-		return genre;
+		return this.genre;
 	},
 
 	setListOfActors : function(list){
-		listOfActors = list;
+		this.listOfActors = list;
 	},
 
 	getListOfActors : function(){
 		var str = "";
 		for(var i = 0; i < listOfActors.length; i++){
-			str+= "<a href="'#'">"listOfActors[i].getName() + listOfActors[i].getSurName()+"</a>";
+			str+= listOfActors[i].getName() + listOfActors[i].getSurName();
 		}
+		return str;
 	},
 
 	setRating : function(ratingValue)
 	{
-		rating = ratingValue; 
+		this.rating = ratingValue; 
 	},
 
 	getRating : function()
 	{
-		return rating;
+		return this.rating;
 	}
+
 
 
 }
