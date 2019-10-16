@@ -1,12 +1,14 @@
-function  Movie(id,name,description,genre,listOfActors,rating)
+function  Movie(movie)
 {
-	this.id = id;
-	this.name = name;
-	this.description = description;
-	this.genre = genre;
-	this.listOfActors = listOfActors;
-	this.rating = rating;
+	this.id = movie.id;
+	this.name = movie.name;
+	this.description = movie.description;
+	this.genre = movie.genre;
+	this.listOfActors = movie.listOfActors;
+	this.rating = movie.rating;
 }
+
+
 
 Movie.prototype = 
 {
@@ -64,7 +66,8 @@ Movie.prototype =
 	getRating : function()
 	{
 		return this.rating;
-	}
+	},
+
 
 
 

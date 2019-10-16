@@ -1,17 +1,13 @@
-function MovieList()
+function MovieList(movieList)
 {
-	 this.movieList = [];
+	 this.movieList = movieList;
 }
 
 MovieList.prototype = 
 {
 	add:  function(movie)
 	{
-		if(this.movieList == undefined){
-			this.movieList = [movie];
-			return;
-		}
-
+		
 		this.movieList.push(movie);
 	},
 
@@ -51,6 +47,16 @@ MovieList.prototype =
 		if(movie == null)
 			return;
 		this.movieList = this.movieList.splice(this.movieList.indexOf(movie)-1,1);
+	},
+
+	edit : function(id,data)
+	{
+		var movie = this.findMovieById(id);
+
+		for(var atrib in movie)
+		{
+			movie[atrib] = data[atrib];
+		}
 	},
 
 	sortByGenre:  function(genre)
