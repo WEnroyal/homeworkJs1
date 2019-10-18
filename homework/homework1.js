@@ -24,6 +24,12 @@ var user2 =
 	{
 		this.name = name;
 	},
+
+	setAllData: function(name,surName)
+	{
+		this.name = name;
+		this.surName = surName;
+	}
 }
 
 
@@ -37,8 +43,10 @@ var bind = function(fn, context) {
 
 var user = new User("Leha","Petrov");
 var userBind = bind(user2.setName,user);
-userBind("Bogdan");
 var userBind2 = bind(user2.getName,user);
-console.log(userBind2());
+var userBind3 = bind(user2.setAllData,user);
+userBind("Bogdan");
+userBind3("Anton","Marchenko");
+console.log(userBind2() + " " + user.getSurName());
 
 
