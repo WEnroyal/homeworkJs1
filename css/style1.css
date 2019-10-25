@@ -34,7 +34,7 @@ main
 {
 	height: 256px;
 	width: 160px;
-	max-width:100%;
+	min-width:100%;
 }
 
 .row.film-showing
@@ -125,4 +125,12 @@ footer
 .footer-icon
 {
 	color:#fff;
+}
+
+@media screen(min-width: 1144px)
+{
+	.test
+	{
+		display:inline-table;
+	}
 }

@@ -37,7 +37,7 @@
 			</div>
 		</div>
 		<div class="row film-showing">
-			<!-- <div class="col-2">
+			<!-- <div class="col-2 test">
 				<div class="film-container">
 				<img src="http://baskino.me/uploads/images/2015/981/flii329.jpg" alt="kobain-heck-montage">
 				<a href="#"><span class="film-name">Кобейн чёртов монтаж</span></a>
@@ -87,27 +87,28 @@
 	<script src="model/MovieList.js"></script>
 	<script src="homework/homework1.js"></script>
 	<script src="model/MovieView.js"></script>
+	<script src="model/MovieListView.js"></script>
 	<script>
+
 		 var movie1 = new Movie(1,"Кобейн чёртов монтаж","fdsfdsfds","Triller",0,5.0);
 		 var movie2 = new Movie(2,"Гарри Поттер","fdsfdsfds","Fantastic",0,5.0);
 		 var movie3 = new Movie(3,"Король лев","fdsfdsfds","Fantastic",0,5.0);
 		 var movie4 = new Movie(4,"Форсаж","fdsfdsfds","Triller",0,5.0);
 		 var movie5 = new Movie(5,"Капкан","fdsfdsfds","Fantastic",0,5.0);
 		 var movie6 = new Movie(6,"История игрушек","fdsfdsfds","Fantastic",0,5.0);
-		// console.log(movie1.getName());
-		// var movieList = new MovieList();
-		// movieList.add(movie2);
-		// movieList.add(movie1);
-		// var tempArr = movieList.sortByGenre("Comedy");
 
-		var movieView = new MovieView();
+		var movieList = new MovieList();
+		movieList.add(movie1);
+		movieList.add(movie2);
+		movieList.add(movie3);
+		movieList.add(movie4);
+		movieList.add(movie5);
+		movieList.add(movie6);
+		var tempArr = movieList.sortByGenre("Fantastic");
 		var rowFilmShowing = document.querySelector(".row.film-showing");
-		movieView.render(movie1,rowFilmShowing); 
-		movieView.render(movie2,rowFilmShowing); 
-		movieView.render(movie3,rowFilmShowing);
-		movieView.render(movie4,rowFilmShowing); 
-		movieView.render(movie5,rowFilmShowing); 
-		movieView.render(movie6,rowFilmShowing);
+		var movieListView = new MovieListView(tempArr);
+		movieListView.renderAll(rowFilmShowing);
+
 	</script>
 	</div>
 </body>

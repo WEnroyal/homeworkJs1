@@ -19,6 +19,7 @@ MovieView.prototype = {
 		var img = document.createElement("img");
 		img.setAttribute("src","images/"+movie.getId()+".jpg");
 		var a = document.createElement("a");
+		a.setAttribute("href","#");
 		var span = document.createElement("span");
 		span.textContent=movie.getName();
 		span.classList.add("film-name");

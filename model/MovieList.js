@@ -7,35 +7,37 @@ MovieList.prototype =
 {
 	add:  function(movie)
 	{
-		
+		if(this.movieList == undefined)
+			this.movieList = [];
 		this.movieList.push(movie);
 	},
 
 	findMovieById : function(id)
 	{
-		var movie =  null;
-		for(var i = 0; i < this.movieList.length; i++)
-		{
-			if(this.movieList[i].getId() == id)
-			{
-				movie = this.movieList[i];
-				break;
-			}
-		}
+		var movie =  this.movieList.find(item => item.getId() == id);
+		// for(var i = 0; i < this.movieList.length; i++)
+		// {
+		// 	if(this.movieList[i].getId() == id)
+		// 	{
+		// 		movie = this.movieList[i];
+		// 		break;
+		// 	}
+		// }
+
 		return movie;
 	},
 
 	findMovieByName : function(name)
 	{
-		var movie = null;
-		for(var i = 0; i < this.movieList.length; i++)
-		{
-			if(this.movieList[i].getName().toUpperCase() == name.toUpperCase())
-			{
-				movie = this.movieList[i];
-				break;
-			}
-		}
+		var movie = this.movieList.find(item => item.getName().toUpperCase() == name.toUpperCase());;
+		// for(var i = 0; i < this.movieList.length; i++)
+		// {
+		// 	if(this.movieList[i].getName().toUpperCase() == name.toUpperCase())
+		// 	{
+		// 		movie = this.movieList[i];
+		// 		break;
+		// 	}
+		// }
 		return movie;
 	},
 
@@ -61,20 +63,20 @@ MovieList.prototype =
 
 	sortByGenre:  function(genre)
 	{
-		var tempArr = this.movieList.concat();
 		if(this.movieList == undefined)
 			return;
-
+	
+	var tempArr = this.movieList.concat();
 	var sorted = false;
     while(sorted != true) {
         sorted = true;
         var temp = 0;
-        for (var i = 1; i < tempArr.length; i++) {
-
-            if (tempArr[i].getGenre() == genre) {
+        for (var i = 0; i < tempArr.length-1; i++) {
+        	
+            if (tempArr[i].getGenre() != genre && tempArr[i+1].getGenre() == genre){
                 temp = tempArr[i];
-                tempArr[i] = tempArr[i-1];
-                tempArr[i-1] = temp;
+                tempArr[i] = tempArr[i+1];
+                tempArr[i+1] = temp;
                 sorted = false;
             }
         }
