@@ -7,14 +7,16 @@
 // 	this.listOfActors = movie.listOfActors;
 // 	this.rating = movie.rating;
 // }
-function  Movie(id,name,description,genre,listOfActors,rating)
+function  Movie(id,name,description,genre,country,listOfActors,rating,year)
 {
 	this.id = id;
 	this.name = name;
 	this.description = description;
 	this.genre = genre;
+	this.country = country;
 	this.listOfActors = listOfActors;
 	this.rating = rating;
+	this.year = year;
 }
 
 
@@ -76,6 +78,23 @@ Movie.prototype =
 	{
 		return this.rating;
 	},
+
+	setCountry : function(country){
+		this.country = country;
+	},
+	getCountry : function(){
+		return this.country;
+	},
+
+	setYear : function(year){
+		this.year = year;
+	},
+
+	getYear : function(){
+		return this.year;
+	}
+
+
 
 
 

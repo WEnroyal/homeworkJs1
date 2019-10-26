@@ -127,10 +127,18 @@ footer
 	color:#fff;
 }
 
-@media screen(min-width: 1144px)
+p
 {
-	.test
-	{
-		display:inline-table;
-	}
+	color:#fff;
+}
+#text-description
+{
+	max-height: 500px;
+	overflow: auto;
+	overflow-x: hidden;
+}
+#detailPage-img
+{
+	width:220px;
+	height: 352px;
 }
